@@ -12,17 +12,17 @@
 
 import javax.swing.*;
 
-public class ArrayDeque<Item> {
-    public Item[] items;
-    public int size;
-    public int nextFirst;
-    public int nextLast;
+public class ArrayDeque<T> {
+    private T[] items;
+    private int size;
+    private int nextFirst;
+    private int nextLast;
     private float R;
 
 
     /** Creates an empty list. */
     public ArrayDeque() {
-        items = (Item[]) new Object[4];
+        items = (T[]) new Object[4];
         size = 0;
         nextFirst=0;
         nextLast=1;
@@ -30,7 +30,7 @@ public class ArrayDeque<Item> {
     }
 
     /** Inserts X into the back of the list. */
-    public void addLast(Item x) {
+    public void addLast(T x) {
         if (size==items.length){
             resize(size*2);
         }
@@ -40,7 +40,7 @@ public class ArrayDeque<Item> {
         R=(float)size/(float)items.length;
     }
 
-    public void addFirst(Item x){
+    public void addFirst(T x){
 
         size = size + 1;
         items[nextFirst]=x;
@@ -76,7 +76,7 @@ public class ArrayDeque<Item> {
     }
 
     private void resize(int capacity){
-        Item [] a =(Item[])new  Object[capacity];
+        T [] a =(T[])new  Object[capacity];
 
         System.arraycopy(items,nextFirst,a,0,size-nextFirst);
         System.arraycopy(items,0,a,size-nextFirst,nextFirst);
@@ -100,8 +100,8 @@ public class ArrayDeque<Item> {
 
     /** Deletes item from back of the list and
      * returns deleted item. */
-    public Item removeLast() {
-        Item x = getLast();
+    public T removeLast() {
+        T x = getLast();
         size = size - 1;
         if (R<0.25){
             resize((int)0.5*items.length);
@@ -114,8 +114,8 @@ public class ArrayDeque<Item> {
 
     /*Delete item form the head of the list and
     * returns deleted item*/
-    public Item removeFirst(){
-        Item x =getFirst();
+    public T removeFirst(){
+        T x =getFirst();
         size-=1;
         if (R<0.25){
             resize((int)0.5*items.length);
@@ -126,11 +126,11 @@ public class ArrayDeque<Item> {
         return x;
     }
     /** Returns the item from the back of the list. */
-    public Item getLast() {
+    public T getLast() {
         return items[nextLast-1];
     }
 
-    public Item getFirst(){
+    public T getFirst(){
         if (nextFirst==items.length-1)
         {
         return items[0];
@@ -139,7 +139,7 @@ public class ArrayDeque<Item> {
             return items[nextFirst-1];
         }
     }
-    public Item get(int i) {
+    public T get(int i) {
         return items[i];
     }
 
