@@ -10,59 +10,168 @@
  size: The number of items in the list should be size.
 */
 
-public class ArrayDeque {
-    private int[] items;
-    private int size;
+import javax.swing.*;
+
+public class ArrayDeque<Item> {
+    public Item[] items;
+    public int size;
+    public int nextFirst;
+    public int nextLast;
+    private float R;
+
 
     /** Creates an empty list. */
     public ArrayDeque() {
-        items = new int[2];
+        items = (Item[]) new Object[4];
         size = 0;
+        nextFirst=0;
+        nextLast=1;
+        R=(float)size/(float)items.length;
     }
 
     /** Inserts X into the back of the list. */
-    public void addLast(int x) {
+    public void addLast(Item x) {
         if (size==items.length){
-            resize(size+1);
+            resize(size*2);
         }
         items[size] = x;
         size = size + 1;
+        nextLast=addOne(nextLast);
+        R=(float)size/(float)items.length;
+    }
+
+    public void addFirst(Item x){
+
+        size = size + 1;
+        items[nextFirst]=x;
+        if(size==items.length){
+            resize(size*2);
+            return ;
+        }
+        nextFirst=minusOne(nextFirst);
+      /*  if (nextFirst!=0){
+            nextFirst=nextFirst-1;
+        }
+        else {
+            nextFirst=items.length-1;
+        }*/
+        R=(float)size/(float)items.length;
+    }
+
+    /*A helper function to compute array index(addFirst,removeLast)*/
+    private int minusOne(int index){
+        index=index-1;
+        if (index<0)
+            index=index+items.length;
+        return index;
+    }
+
+    /*A helper function to compute array index(removeFirst, addLast)*/
+    private int addOne(int index){
+        index=index+1;
+        if(index>items.length) {
+            index = index % items.length;
+        }
+        return index;
     }
 
     private void resize(int capacity){
-            int [] a =new int[capacity];
-            System.arraycopy(items,0,a,0,size);
-            items=a;
+        Item [] a =(Item[])new  Object[capacity];
+
+        System.arraycopy(items,nextFirst,a,0,size-nextFirst);
+        System.arraycopy(items,0,a,size-nextFirst,nextFirst);
+        items=a;
+        nextFirst=2*size-1;
+        nextLast=size;
+        R=(float)size/(float)items.length;
     }
 
-    /** Returns the item from the back of the list. */
-    public int getLast() {
-        return items[size - 1];
-    }
-    /** Gets the ith item in the list (0 is the front). */
-    public int get(int i) {
-        return items[i];
+    /*check if the Array is empty*/
+    public boolean isEmpty(){
+        if (nextFirst==nextLast-1)
+            return true;
+        return false;
     }
 
-    /** Returns the number of items in the list. */
-    public int size() {
+    /*check the size of the array*/
+    public int size(){
         return size;
     }
 
     /** Deletes item from back of the list and
      * returns deleted item. */
-    public int removeLast() {
-        int x = getLast();
+    public Item removeLast() {
+        Item x = getLast();
         size = size - 1;
+        if (R<0.25){
+            resize((int)0.5*items.length);
+        }
+        items[nextLast-1]=null;
+        nextLast=minusOne(nextLast);
+        R=(float)size/(float)items.length;
         return x;
     }
+
+    /*Delete item form the head of the list and
+    * returns deleted item*/
+    public Item removeFirst(){
+        Item x =getFirst();
+        size-=1;
+        if (R<0.25){
+            resize((int)0.5*items.length);
+        }
+        items[nextFirst-1]=null;
+        nextLast=addOne(nextLast);
+        R=(float)size/(float)items.length;
+        return x;
+    }
+    /** Returns the item from the back of the list. */
+    public Item getLast() {
+        return items[nextLast-1];
+    }
+
+    public Item getFirst(){
+        if (nextFirst==items.length-1)
+        {
+        return items[0];
+        }
+        else{
+            return items[nextFirst-1];
+        }
+    }
+    public Item get(int i) {
+        return items[i];
+    }
+
+    /*print all item[i] in sequence*/
+    public void printDeque(){
+        if(nextLast>nextFirst){
+            for(int i=nextFirst-1;i<nextLast;i++){
+                System.out.println(items[i]);
+            }
+        }
+        else {
+            for(int i=nextFirst-1;i<size;i++) {
+                System.out.println(items[i]);
+            }
+            for(int i=0;i<nextLast;i++) {
+                System.out.println(items[i]);
+            }
+        }
+    }
+
+
+
+
     public static void main(String[] args){
         ArrayDeque L= new ArrayDeque();
         L.addLast(3);
         L.addLast(2);
-        L.addLast(11);
-        System.out.println(L.removeLast());
+        L.addFirst(11);
 
+
+        //System.out.println(L.removeLast());
+        System.out.println(L.items[2]);
 
     }
 }
