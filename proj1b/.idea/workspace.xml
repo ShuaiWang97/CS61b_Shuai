@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd7b3d3d-9041-4f7b-8e37-0ccc95781999" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab3/Flik/FlikTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Intlist/IntList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/Intlist/IntList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Intlist/IntListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Flik/HorribleSteve.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Flik/HorribleSteve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/IntList/IntListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/IntList/IntListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/PalindromeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestOffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/TestPalindrome.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cZ7nbFFOsPFc2pftvoPX1o3yjS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab2/Intlist" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager" selected="JUnit.TestOffByN">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration name="PalindromeFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PalindromeFinder" />
+      <module name="proj1b" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOffByN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestOffByN" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestOffByOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestOffByOne" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPalindrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPalindrome" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPalindrome.testWordToDeque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1b" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPalindrome" />
+      <option name="METHOD_NAME" value="testWordToDeque" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestOffByN" />
+        <item itemvalue="JUnit.TestOffByOne" />
+        <item itemvalue="Application.PalindromeFinder" />
+        <item itemvalue="JUnit.TestPalindrome" />
+        <item itemvalue="JUnit.TestPalindrome.testWordToDeque" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd7b3d3d-9041-4f7b-8e37-0ccc95781999" name="Default Changelist" comment="" />
+      <created>1590724429422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590724429422</updated>
+      <workItem from="1590724430531" duration="16335000" />
+      <workItem from="1591013984377" duration="1453000" />
+      <workItem from="1591026536198" duration="1203000" />
+      <workItem from="1591257357730" duration="10591000" />
+      <workItem from="1591283784655" duration="3130000" />
+      <workItem from="1591457867366" duration="3036000" />
+      <workItem from="1591502201586" duration="4811000" />
+      <workItem from="1591888150444" duration="641000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1035" y="274" key="#Notifications" timestamp="1591285212735">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1035" y="274" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1591285212735" />
+    <state x="928" y="301" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591258965817">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="928" y="301" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1591258965817" />
+    <state x="412" y="246" key="FileChooserDialogImpl" timestamp="1590735802862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="412" y="246" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590735802862" />
+    <state width="723" height="185" key="GridCell.Tab.0.bottom" timestamp="1591520392699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591520392699" />
+    <state width="723" height="185" key="GridCell.Tab.0.center" timestamp="1591520392699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591520392699" />
+    <state width="723" height="185" key="GridCell.Tab.0.left" timestamp="1591520392698">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591520392698" />
+    <state width="723" height="185" key="GridCell.Tab.0.right" timestamp="1591520392699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591520392699" />
+    <state width="723" height="259" key="GridCell.Tab.1.bottom" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.1.center" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.1.left" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.1.right" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.2.bottom" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.2.center" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.2.left" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state width="723" height="259" key="GridCell.Tab.2.right" timestamp="1591520392684">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="259" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1591520392684" />
+    <state x="498" y="0" key="SettingsEditor" timestamp="1590724900518">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590724900518" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1591027539588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1591027539588" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/TestPalindrome.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/TestOffByN.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proj1b$TestPalindrome.ic" NAME="TestPalindrome Coverage Results" MODIFIED="1591027011815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
