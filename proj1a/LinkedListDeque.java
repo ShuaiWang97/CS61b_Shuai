@@ -1,11 +1,11 @@
-public class LinkedListDeque<BleepBlorp> {
+public class LinkedListDeque<T> implements Deque<T>{
     /*NESTED Classes*/
     public class Deque {
-        public BleepBlorp item;
+        public T item;
         public Deque next;
         public Deque prev;
 
-        public Deque(Deque j,BleepBlorp i, Deque n) {
+        public Deque(Deque j,T i, Deque n) {
             prev = j;
             item = i;
             next = n;
@@ -23,8 +23,10 @@ public class LinkedListDeque<BleepBlorp> {
         sentinel.prev=sentinel;
         size=0;
     }
+
+    @Override
     /*add last*/
-    public void addLast(BleepBlorp x) {
+    public void addLast(T x) {
         size += 1;
         //why null is not sentinel//
         //last.next = new Deque(last, x, null);
@@ -33,8 +35,8 @@ public class LinkedListDeque<BleepBlorp> {
 
     }
 
-    public void addFirst(BleepBlorp x){
-
+    @Override
+    public void addFirst(T x){
         //I really do not know why
         sentinel.next.prev= new Deque(sentinel,x, sentinel.next);
        // sentinel.next.prev = node;
@@ -47,21 +49,28 @@ public class LinkedListDeque<BleepBlorp> {
         size=size+1;
     }
 
-    public void removeFirst(){
+    @Override
+    public T removeFirst(){
+        T x =sentinel.item;
         sentinel.next=sentinel.next.next;
+        return x;
     }
-    public void removeLast(){
+    public T removeLast(){
+        T x =sentinel.prev.item;
         sentinel.prev=null;
+        return x;
     }
 
-    public BleepBlorp getFirst(){
+    public T getFirst(){
         return sentinel.next.item;
     }
 
+    @Override
     /* calucate the size of first with overloaded*/
     public int size(){
         return size(sentinel.next);
     }
+
     private int size(Deque p){
         if(p == sentinel){
             return 0;
@@ -70,7 +79,7 @@ public class LinkedListDeque<BleepBlorp> {
     }
     /* get size
     /* get index x of snetinel */
-    public BleepBlorp get(int index){
+    public T get(int index){
         Deque P=sentinel.next;
         for(int i=0;i<index;i++){
             P=P.next;
@@ -78,11 +87,11 @@ public class LinkedListDeque<BleepBlorp> {
         return P.item;
     }
     /*get index x of sentinel*/
-    public BleepBlorp getRecursive(int index){
+    public T getRecursive(int index){
         Deque p=sentinel;
         return  helpgetRecursive(index,p);
     }
-    public BleepBlorp helpgetRecursive(int index,Deque p){
+    public T helpgetRecursive(int index,Deque p){
         if (index==0){
             return p.next.item;
         }
@@ -106,7 +115,7 @@ public class LinkedListDeque<BleepBlorp> {
     }*/
 
     /* get the last item of the list*/
-    public BleepBlorp getLast(){
+    public T getLast(){
         Deque p=sentinel;
         while (p.next!=null){
             p=p.next;
@@ -123,9 +132,8 @@ public class LinkedListDeque<BleepBlorp> {
     }
 
     public static void main(String[] args){
-        LinkedListDeque<Integer> L = new LinkedListDeque<>();
-       // L.addLast(3);
-       // L.addLast(4);
+        LinkedListDeque<Integer> L = new LinkedListDeque();
+
           L.addFirst(4);
           L.addLast(5);
           L.addFirst(3);
