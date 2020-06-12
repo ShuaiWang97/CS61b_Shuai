@@ -10,11 +10,11 @@
  size: The number of items in the list should be size.
 */
 
-import javax.swing.*;
 
-public class ArrayDeque<T> implements Deque<T>{
+
+public class ArrayDeque<T> implements Deque<T> {
     private T[] items;
-    public int size;
+    private int size;
     private int nextFirst;
     private int nextLast;
     private float R;
@@ -24,9 +24,9 @@ public class ArrayDeque<T> implements Deque<T>{
     public ArrayDeque() {
         items = (T[]) new Object[4];
         size = 0;
-        nextFirst=3;
-        nextLast=0;
-        R=(float)size/(float)items.length;
+        nextFirst = 3;
+        nextLast = 0;
+        R = (float) size / (float) items.length;
     }
 
     @Override
@@ -34,70 +34,70 @@ public class ArrayDeque<T> implements Deque<T>{
     public void addLast(T x) {
         items[size] = x;
         size = size + 1;
-        if (size==items.length){
-            resize(size*2);
-            R=(float)size/(float)items.length;
+        if (size == items.length) {
+            resize(size * 2);
+            R = (float) size / (float) items.length;
             return;
         }
-        nextLast=addOne(nextLast);
-        R=(float)size/(float)items.length;
+        nextLast = addOne(nextLast);
+        R = (float) size / (float)items.length;
     }
 
     @Override
     public void addFirst(T x){
         size = size + 1;
         items[nextFirst]=x;
-        if(size==items.length){
-            resize(size*2);
+        if (size == items.length){
+            resize(size * 2);
             return ;
         }
-        nextFirst=minusOne(nextFirst);
-        R=(float)size/(float)items.length;
+        nextFirst = minusOne(nextFirst);
+        R = (float) size / (float) items.length;
     }
 
 
     /*A helper function to compute array index(addFirst,removeLast)*/
-    private int minusOne(int index){
-        index=index-1;
-        if (index<0)
-            index=index+items.length;
+    private int minusOne (int index) {
+        index = index-1;
+        if (index < 0)
+            index = index + items.length;
         return index;
     }
 
     /*A helper function to compute array index(removeFirst, addLast)*/
-    private int addOne(int index){
-        index=index+1;
-        if(index>=items.length) {
+    private int addOne(int index) {
+        index = index + 1;
+        if (index >= items.length) {
             index = index % items.length;
         }
         return index;
     }
 
 
-    private void resize(int capacity){
-        T [] a =(T[])new  Object[capacity];
+    private void resize(int capacity) {
+        T [] a = (T[]) new Object[capacity];
 
-        if (capacity==2*size) {
+        if (capacity == 2 * size) {
             System.arraycopy(items, 0, a, 0, size);
 
-        }else if(nextLast>nextFirst){
+        }else if (nextLast > nextFirst) {
             System.arraycopy(items,nextFirst+1,a,0,size);
-        }else if(nextLast<nextFirst){
+        }else if (nextLast < nextFirst) {
             System.arraycopy(items,nextFirst+1,a,0,size-nextFirst-1);
             System.arraycopy(items,0,a,size-nextFirst-1,nextLast);
         }
-        items=a;
-        nextFirst=capacity-1;
-        nextLast=size;
+        items = a;
+        nextFirst = capacity-1;
+        nextLast = size;
 
-        R=(float)size/(float)items.length;
+        R = (float)size / (float)items.length;
     }
 
 
     @Override
     /*check if the Array is empty*/
     public boolean isEmpty(){
-        if (nextFirst==nextLast-1)
+        if (nextFirst == nextLast-1)
             return true;
         return false;
     }
@@ -113,13 +113,13 @@ public class ArrayDeque<T> implements Deque<T>{
      * returns deleted item. */
     public T removeLast() {
         T x = getLast();
-        if (R<0.25){
-            resize((int)Math.round(0.5*(double)items.length));
+        if (R < 0.25){
+            resize((int)Math.round(0.5 * (double)items.length));
         }
         size = size - 1;
-        items[nextLast-1]=null;
-        nextLast=minusOne(nextLast);
-        R=(float)size/(float)items.length;
+        items[nextLast-1] = null;
+        nextLast = minusOne(nextLast);
+        R = (float)size / (float)items.length;
         return x;
     }
 
@@ -127,14 +127,14 @@ public class ArrayDeque<T> implements Deque<T>{
     /*Delete item form the head of the list and
     * returns deleted item*/
     public T removeFirst(){
-        T x =getFirst();
+        T x = getFirst();
 
-        if (R<0.25){
-            resize((int)Math.round(0.5*(double)items.length));
+        if (R < 0.25){
+            resize((int)Math.round(0.5 * (double)items.length));
         }
-        size-=1;
-        items[addOne(nextFirst)]=null;
-        nextFirst=addOne(nextFirst);
+        size -= 1;
+        items[addOne(nextFirst)] = null;
+        nextFirst = addOne(nextFirst);
         R=(float)size/(float)items.length;
         return x;
     }

@@ -36,9 +36,19 @@ public class Palindrome {
         return true;
     }
 
-    //overload method//
-    public boolean isPalindrome(String word, CharacterComparator cc){
 
-        return true;
+
+    public static boolean isPalindrome(String word, CharacterComparator cc){
+        boolean isEqual = false;
+        for (int i = 0, j = word.length() - 1; i < word.length()/2; i++,j--){
+            if(cc.equalChars(word.charAt(i),word.charAt(j)) == false) {
+                isEqual = false;
+            }else{
+                isEqual = true;
+            }
+
+        }
+        return isEqual;
+
     }
 }
