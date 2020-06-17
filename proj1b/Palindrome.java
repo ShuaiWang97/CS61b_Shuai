@@ -11,9 +11,11 @@ public class Palindrome {
 
     public boolean isPalindrome(String word){
         Deque<Character> d = wordToDeque(word);
-        if(d.size()%2==0){
-            int num=d.size();
-            for(int i=0;i<num/2;i++) {
+      //  if (d.size() == 1)
+      //      return true;
+        if(d.size() % 2 == 0){
+            int num = d.size();
+            for(int i = 0;i < num / 2;i ++) {
                 //OffByOne obo = new OffByOne();
                 Character a = d.removeFirst();
                 Character b = d.removeLast();
@@ -38,7 +40,7 @@ public class Palindrome {
 
 
 
-    public static boolean isPalindrome(String word, CharacterComparator cc){
+    public boolean isPalindrome(String word, CharacterComparator cc){
         boolean isEqual = false;
         for (int i = 0, j = word.length() - 1; i < word.length()/2; i++,j--){
             if(cc.equalChars(word.charAt(i),word.charAt(j)) == false) {

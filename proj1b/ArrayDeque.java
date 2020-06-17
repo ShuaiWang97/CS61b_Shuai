@@ -40,13 +40,13 @@ public class ArrayDeque<T> implements Deque<T> {
             return;
         }
         nextLast = addOne(nextLast);
-        R = (float) size / (float)items.length;
+        R = (float) size / (float) items.length;
     }
 
     @Override
-    public void addFirst(T x){
+    public void addFirst(T x) {
         size = size + 1;
-        items[nextFirst]=x;
+        items[nextFirst] = x;
         if (size == items.length){
             resize(size * 2);
             return ;
@@ -58,8 +58,8 @@ public class ArrayDeque<T> implements Deque<T> {
 
     /*A helper function to compute array index(addFirst,removeLast)*/
     private int minusOne (int index) {
-        index = index-1;
-        if (index < 0)
+        index = index - 1;
+        if ( index < 0 )
             index = index + items.length;
         return index;
     }
@@ -80,11 +80,11 @@ public class ArrayDeque<T> implements Deque<T> {
         if (capacity == 2 * size) {
             System.arraycopy(items, 0, a, 0, size);
 
-        }else if (nextLast > nextFirst) {
-            System.arraycopy(items,nextFirst+1,a,0,size);
-        }else if (nextLast < nextFirst) {
-            System.arraycopy(items,nextFirst+1,a,0,size-nextFirst-1);
-            System.arraycopy(items,0,a,size-nextFirst-1,nextLast);
+        } else if (nextLast > nextFirst) {
+            System.arraycopy(items,nextFirst + 1,a,0,size);
+        } else if (nextLast < nextFirst) {
+            System.arraycopy(items,nextFirst + 1,a,0 , size - nextFirst-1);
+            System.arraycopy(items, 0, a, size-nextFirst-1, nextLast);
         }
         items = a;
         nextFirst = capacity-1;
@@ -96,7 +96,7 @@ public class ArrayDeque<T> implements Deque<T> {
 
     @Override
     /*check if the Array is empty*/
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         if (nextFirst == nextLast-1)
             return true;
         return false;
@@ -104,7 +104,7 @@ public class ArrayDeque<T> implements Deque<T> {
 
     @Override
     /*check the size of the array*/
-    public int size(){
+    public int size() {
         return size;
     }
 
@@ -113,11 +113,11 @@ public class ArrayDeque<T> implements Deque<T> {
      * returns deleted item. */
     public T removeLast() {
         T x = getLast();
-        if (R < 0.25){
-            resize((int)Math.round(0.5 * (double)items.length));
+        if (R < 0.25) {
+            resize((int) Math.round(0.5 * (double) items.length));
         }
         size = size - 1;
-        items[nextLast-1] = null;
+        items[nextLast - 1] = null;
         nextLast = minusOne(nextLast);
         R = (float)size / (float)items.length;
         return x;

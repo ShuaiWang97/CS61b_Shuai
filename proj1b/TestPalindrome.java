@@ -19,7 +19,7 @@ public class TestPalindrome {
 
     @Test
     public void TestisPalindrome(){
-        assertFalse(palindrome.isPalindrome("abaca"));
+        assertTrue(palindrome.isPalindrome("a"));
         assertTrue(palindrome.isPalindrome("aba"));
         assertTrue(palindrome.isPalindrome("abba"));
 //        assertTrue(palindrome.isPalindrome("1122"));
