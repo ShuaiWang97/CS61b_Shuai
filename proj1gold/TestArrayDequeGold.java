@@ -47,8 +47,11 @@ public void test() {
    // good1.printDeque();
 
     for (int i=0; i<15; i++) {
-        int actual = sad1.get(i);
-        int expected = good1.get(i);
+        Integer actual = sad1.get(i);
+        Integer expected = good1.get(i);
+        assertEquals("Oh noooo!\nThis is bad in removeFirst():\n   Random number at " + i + " th item " + actual
+                        + " not equal to " + expected + "!",
+                expected, actual);
         assertEquals("Oh noooo!\nThis is bad in removeFirst():\n   Random number at " + i + " th item " + actual
                         + " not equal to " + expected + "!",
                 expected, actual);
@@ -56,4 +59,34 @@ public void test() {
 }
 
 
+    @Test
+    public void test2() {
+        StudentArrayDeque <Integer> sad1 = new StudentArrayDeque <>();
+        ArrayDequeSolution <Integer> good1 = new ArrayDequeSolution <>();
+
+        int random = StdRandom.uniform(100);
+        sad1. addFirst(random);
+        good1.addFirst(random);
+        assertEquals("addFirst(" + random + ")\n",good1.get(0),sad1.get(0) );
+        System.out.println("addFirst("+random+")");
+
+        random = StdRandom.uniform(100);
+        sad1.addLast(random);
+        good1.addLast(random);
+        assertEquals("addLast("+random+")", sad1.get(1), good1.get(1));
+        System.out.println("addLast("+random+")");
+
+        int act = sad1.removeFirst();
+        int exp = good1.removeFirst();
+        assertEquals("removeFirst()", act, exp);
+        System.out.println("removeFirst()");
+
+
+        act = sad1.removeFirst();
+        exp = good1.removeFirst();
+        assertEquals("removeLast()", exp, act);
+        System.out.println("removeLast()");
+
+
+    }
 }
