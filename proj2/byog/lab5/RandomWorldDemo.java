@@ -54,8 +54,6 @@ public class RandomWorldDemo {
         ter.initialize(WIDTH, HEIGHT);
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
 
-      //  TETile t=new TETile("aa", b, Color backgroundColor, String description);
-      //  addHexagon(randomTiles,p,3,t);
 
         fillWithRandomTiles(randomTiles);
 

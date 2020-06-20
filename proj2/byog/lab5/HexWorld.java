@@ -5,13 +5,21 @@ import static org.junit.Assert.*;
 import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
-
 import java.util.Random;
 
 /**
  * Draws a world consisting of hexagonal regions.
  */
 public class HexWorld {
+    private static final int WIDTH = 30;
+    private static final int HEIGHT = 30;
+
+    private static final long SEED = 2873123;
+    private static final Random RANDOM = new Random(SEED);
+
+
+
+
     /**
      * Computes the width of row i for a size s hexagon.
      * @param s The size of the hex.
@@ -62,8 +70,7 @@ public class HexWorld {
         for (int xi = 0; xi < width; xi += 1) {
             int xCoord = p.x + xi;
             int yCoord = p.y;
-            Random r=new Random(10);
-            world[xCoord][yCoord] = TETile.colorVariant(t, 32, 32, 32, r );
+            world[xCoord][yCoord] =TETile.colorVariant(t, 50, 50, 50, RANDOM );
         }
     }
 
@@ -94,6 +101,25 @@ public class HexWorld {
 
         }
     }
+    public static void fillWithRandomTiles(TETile[][] tiles) {
+        int height = tiles[0].length;
+        int width = tiles.length;
+        for (int x = 0; x < width; x += 1) {
+            for (int y = 0; y < height; y += 1) {
+                tiles[x][y] = Tileset.NOTHING;
+            }
+        }
+    }
+
+    private static TETile randomTile() {
+        int tileNum = RANDOM.nextInt(3);
+        switch (tileNum) {
+            case 0: return Tileset.WALL;
+            case 1: return Tileset.FLOWER;
+            case 2: return Tileset.TREE;
+            default: return Tileset.NOTHING;
+        }
+    }
 
     @Test
     public void testHexRowWidth() {
@@ -121,5 +147,64 @@ public class HexWorld {
         assertEquals(-1, hexRowOffset(2, 1));
         assertEquals(-1, hexRowOffset(2, 2));
         assertEquals(0, hexRowOffset(2, 3));
+    }
+
+    //draw Hexs of topRight
+    public static Position addtopRight(TETile[][] t,Position p, int s){
+        Position newp=new Position(p.x+2*s-1,p.y+s);
+        addHexagon(t,newp,s,randomTile());
+        return p=newp;
+    }
+
+    //draw Hexs of topLeft
+    public static Position addtopLeft(TETile[][] t,Position p, int s){
+        Position newp=new Position(p.x-2*s+1,p.y+s);
+        addHexagon(t,newp,s,randomTile());
+        return p=newp;
+    }
+
+
+    //draw hex for the whole line
+    public static Position drawRandomVerticalHexes(TETile[][] t, Position p, int num){
+        Position p1=p;
+       //first two lines
+        if (num<4) {
+            p1 = addtopLeft(t, p, 3);
+            for (int i = 0; i < num; i++) {
+                p = addtopRight(t, p, 3);
+            }
+        }
+        //Last 3 lines
+        else if(num> 4) {
+            num=8-num;
+            p = addtopRight(t, p, 3);
+            if(num!=1)
+            p1 = addtopLeft(t, p, 3);
+            for (int i = 0; i < num; i++) {
+                p = addtopRight(t, p, 3);
+            }
+        }
+        return p1;
+    }
+
+
+    public static void main(String[] args) {
+        TERenderer ter = new TERenderer();
+        ter.initialize(WIDTH, HEIGHT);
+        TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
+        fillWithRandomTiles(randomTiles);
+
+       //the first hex which is bottom one
+        Position p=new Position(12,0);
+
+        //add the first Hex
+        addHexagon(randomTiles,p,3,randomTile());
+
+        //Draw from the bottom hex line to the up hex line
+        for (int i=2;i<8;i++){
+            p= drawRandomVerticalHexes(randomTiles,p,i);
+        }
+
+        ter.renderFrame(randomTiles);
     }
 }
